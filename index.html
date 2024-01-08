@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Notifications page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+
+        extend: {
+          colors: {
+            'red': 'hsl(1, 90%, 64%)',
+            'blue': 'hsl(219, 85%, 26%)',
+            'Verylightgrayishblue': 'hsl(210, 60%, 98%)',
+            'Lightgrayishblue': 'hsl(211, 68%, 94%)',
+            'Mediumgrayishblue': 'hsl(205, 33%, 90%)',
+            'Grayishblue': 'hsl(219, 14%, 63%)',
+            'Darkgrayishblue': 'hsl(219, 12%, 42%)',
+            'Verydarkblue': 'hsl(224, 21%, 14%)',
+          },
+          fontFamily: {
+            'plusJakartaSans': ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          height: {
+            'containerHeight': '36rem',
+          },
+          width: {
+            'containerWidth': '35rem',
+          },
+
+        },
+        screens: {
+          'desktop': { 'max': '1366px' },
+          'tablet': { 'max': '900px' },
+          'mobile': { 'max': '450px' },
+        },
+      }
+
+    }
+
+  </script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .viewImage {
+      position: absolute;
+      height: 15rem !important;
+      width: 15rem !important;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: .5s;
+    }
+  </style>
+</head>
+
+<body class="bg-Verylightgrayishblue h-screen w-screen flex items-center justify-center flex-col">
+
+  <main class="bg-white h-containerHeight w-containerWidth overflow-scroll no-scrollbar rounded-lg flex flex-col justify-between p-5
+  tablet:w-5/6 tablet:h-4/6 mobile:w-11/12 mobile:h-5/6">
+
+    <div class="flex justify-between items-center">
+      <h3 class="text-lg font-bold flex items-center gap-2">Notifications<span>
+          <div id="notifCounter"
+            class="bg-blue h-5 w-fit px-1.5 rounded flex items-center justify-center text-white text-sm">3</div>
+        </span></h3>
+      <p id="markAsRead" class="hover text-sm">Mark all as read</p>
+    </div>
+
+    <div class="removeBg bg-Verylightgrayishblue flex items-center gap-4 p-2 py-3 rounded-md">
+      <img class="h-9 w-9" src="assets/images/avatar-mark-webber.webp" alt="">
+      <div class="text-xs">
+        <p>
+          <span class="hover font-bold">Mark Webber</span>
+          <span class="text-Darkgrayishblue">reacted to your recent post</span>
+          <span class="hover boldText font-bold">My first tournament today!</span>
+        </p>
+        <p class="text-Darkgrayishblue">
+          1m ago
+        </p>
+      </div>
+    </div>
+
+    <div class="removeBg bg-Verylightgrayishblue flex items-center gap-4 p-2 py-3 rounded-md">
+      <img class="h-9 w-9" src="assets/images/avatar-angela-gray.webp" alt="">
+      <div class="text-xs">
+        <p>
+          <span class="hover font-bold">Angela Gray</span>
+          <span class="text-Darkgrayishblue">followed you</span>
+        </p>
+        <p class="text-Darkgrayishblue">
+          5m ago
+        </p>
+      </div>
+    </div>
+
+    <div class="removeBg bg-Verylightgrayishblue flex items-center gap-4 p-2 py-3 rounded-md">
+      <img class="h-9 w-9" src="assets/images/avatar-jacob-thompson.webp" alt="">
+      <div class="text-xs">
+        <p>
+          <span class="hover font-bold">Jacob Thompson</span>
+          <span class="text-Darkgrayishblue">has joined your group <span
+              class="hover boldText font-bold text-black">Chess
+              Club</span></span>
+        </p>
+        <p class="text-Darkgrayishblue">
+          1 day ago
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-4 p-2 py-3 rounded-md">
+      <img class="h-9 w-9" src="assets/images/avatar-rizky-hasanuddin.webp" alt="">
+      <div class="text-xs flex-col justify-between">
+        <div>
+          <p>
+            <span class="hover font-bold">Rizky Hasanuddin</span>
+            <span class="text-Darkgrayishblue">sent you a private message</span>
+          </p>
+          <p class="text-Darkgrayishblue">
+            5 days ago
+          </p>
+        </div>
+        <div id="card" class="bg-Lightgrayishblue p-2 py-4 rounded-md">
+          Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
+          I'm already having lots of fun and improving my game.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 p-2 py-3 rounded-md">
+      <img class="h-9 w-9" src="assets/images/avatar-kimberly-smith.webp" alt="">
+      <div class="text-xs flex flex-row justify-between w-full">
+        <div>
+          <p>
+            <span class="hover font-bold">Kimberly Smith</span>
+            <span class="text-Darkgrayishblue">commented on your picture</span>
+          </p>
+          <p class="text-Darkgrayishblue">
+            1 week ago
+          </p>
+        </div>
+        <div>
+          <img class="h-9 w-9" src="assets/images/image-chess.webp" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 p-2 py-3 rounded-md">
+      <img class="h-9 w-9" src="assets/images/avatar-nathan-peterson.webp" alt="">
+      <div class="text-xs">
+        <p>
+          <span class="hover font-bold">Nathan Peterson</span>
+          <span class="text-Darkgrayishblue">reacted to your recent <span class="font-bold">post 5 end-game strategies
+              to increase your win rate</span> </span>
+        </p>
+        <p class="text-Darkgrayishblue">
+          2 weeks ago
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 p-2 py-3 rounded-md">
+      <img class="h-9 w-9" src="assets/images/avatar-anna-kim.webp" alt="">
+      <div class="text-xs">
+        <p>
+          <span class="hover font-bold">Anna Kim</span>
+          <span class="text-Darkgrayishblue">left the group <span class="font-bold"> Chess Club</span></span>
+        </p>
+        <p class="text-Darkgrayishblue">
+          2 weeks ago
+        </p>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+
+</html>
