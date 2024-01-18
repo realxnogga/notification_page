@@ -27,18 +27,11 @@
           },
           fontFamily: {
             'plusJakartaSans': ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          height: {
-            'containerHeight': '37rem',
-          },
-          width: {
-            'containerWidth': '35rem',
-          },
-
+          }
         },
         screens: {
           'desktop': { 'max': '1366px' },
-          'tablet': { 'max': '900px' },
+          'tablet': { 'max': '48rem' },
           'mobile': { 'max': '450px' },
         },
       }
@@ -50,34 +43,28 @@
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
-
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
+    .shadow{
+      box-shadow: 0px 0px 30px -13px rgb(0,0,0);
     }
   </style>
 </head>
 
-<body class="bg-Verylightgrayishblue h-screen w-screen flex items-center justify-center flex-col">
+<body class="relative no-scrollbar bg-Verylightgrayishblue h-screen w-screen flex items-center justify-start flex-col">
 
-  <main class="bg-white h-containerHeight w-containerWidth overflow-scroll no-scrollbar rounded-lg flex flex-col justify-between p-5
-  tablet:w-5/6 tablet:h-4/6 mobile:w-full mobile:h-full">
+  <main class="bg-white h-fit w-[46rem] tablet:w-[95%] rounded-lg flex gap-y-2 flex-col p-5
+   mobile:w-full shadow">
 
-    <div class="bg-white top-0 flex justify-between items-center">
-      <h3 class="text-lg font-bold flex items-center gap-2">Notifications<span>
+    <div class="bg-white top-0 flex justify-between flex-wrap items-center">
+      <h3 class="text-2xl font-bold flex items-center gap-2">Notifications<span>
           <div id="notifCounter"
             class="bg-blue h-5 w-fit px-1.5 rounded flex items-center justify-center text-white text-sm">3</div>
         </span></h3>
-      <p id="markAsRead" class="hover text-sm">Mark all as read</p>
+      <p id="markAsRead" class="hover text-lg">Mark all as read</p>
     </div>
 
-    <div class="removeBg bg-Verylightgrayishblue flex gap-4 p-2 py-3 rounded-md">
-      <img class="h-9 w-9" src="assets/images/avatar-mark-webber.webp" alt="">
-      <div class="text-xs">
+    <div class="removeBg bg-Verylightgrayishblue flex gap-4 p-5 rounded-md">
+      <img class="h-12 w-12" src="assets/images/avatar-mark-webber.webp" alt="">
+      <div class="text-lg mobile:text-sm">
         <p>
           <span class="hover font-bold">Mark Webber</span>
           <span class="text-Darkgrayishblue">reacted to your recent post</span>
@@ -86,16 +73,16 @@
         <p class="text-Darkgrayishblue">
           1m ago
         </p>
-        <div class="card bg-Lightgrayishblue p-2 py-4 rounded-md">
+        <div class="card bg-Lightgrayishblue p-5 rounded-md">
           Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
           I'm already having lots of fun and improving my game.
         </div>
       </div>
     </div>
 
-    <div class="removeBg bg-Verylightgrayishblue flex gap-4 p-2 py-3 rounded-md">
-      <img class="h-9 w-9" src="assets/images/avatar-angela-gray.webp" alt="">
-      <div class="text-xs">
+    <div class="removeBg bg-Verylightgrayishblue flex gap-4 p-5 rounded-md">
+      <img class="h-12 w-12" src="assets/images/avatar-angela-gray.webp" alt="">
+      <div class="text-lg mobile:text-sm">
         <p>
           <span class="hover font-bold">Angela Gray</span>
           <span class="text-Darkgrayishblue">followed you</span>
@@ -103,16 +90,16 @@
         <p class="text-Darkgrayishblue">
           5m ago
         </p>
-        <div class="card bg-Lightgrayishblue p-2 py-4 rounded-md">
+        <div class="card bg-Lightgrayishblue p-5 rounded-md">
           Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
           I'm already having lots of fun and improving my game.
         </div>
       </div>
     </div>
 
-    <div class="removeBg bg-Verylightgrayishblue flex items-center gap-4 p-2 py-3 rounded-md">
-      <img class="h-9 w-9" src="assets/images/avatar-jacob-thompson.webp" alt="">
-      <div class="text-xs">
+    <div class="removeBg bg-Verylightgrayishblue flex gap-4 p-5 rounded-md">
+      <img class="h-12 w-12" src="assets/images/avatar-jacob-thompson.webp" alt="">
+      <div class="text-lg mobile:text-sm">
         <p>
           <span class="hover font-bold">Jacob Thompson</span>
           <span class="text-Darkgrayishblue">has joined your group <span
@@ -122,16 +109,16 @@
         <p class="text-Darkgrayishblue">
           1 day ago
         </p>
-        <div class="card bg-Lightgrayishblue p-2 py-4 rounded-md">
+        <div class="card bg-Lightgrayishblue p-5 rounded-md">
           Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
           I'm already having lots of fun and improving my game.
         </div>
       </div>
     </div>
 
-    <div class="flex gap-4 p-2 py-3 rounded-md">
-      <img class="h-9 w-9" src="assets/images/avatar-rizky-hasanuddin.webp" alt="">
-      <div class="text-xs flex-col justify-between">
+    <div class="flex gap-4 p-5 rounded-md">
+      <img class="h-12 w-12" src="assets/images/avatar-rizky-hasanuddin.webp" alt="">
+      <div class="text-lg mobile:text-sm flex-col justify-between">
         <div>
           <p>
             <span class="hover font-bold">Rizky Hasanuddin</span>
@@ -141,16 +128,16 @@
             5 days ago
           </p>
         </div>
-        <div class="card cardActive bg-Lightgrayishblue p-2 py-4 rounded-md">
+        <div class="card cardActive bg-Lightgrayishblue p-5 rounded-md">
           Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
           I'm already having lots of fun and improving my game.
         </div>
       </div>
     </div>
 
-    <div class="flex gap-4 p-2 py-3 rounded-md">
-      <img class="h-9 w-9" src="assets/images/avatar-kimberly-smith.webp" alt="">
-      <div class="text-xs flex flex-row justify-between w-full">
+    <div class="flex gap-4 p-5 rounded-md">
+      <img class="h-12 w-12" src="assets/images/avatar-kimberly-smith.webp" alt="">
+      <div class="text-lg mobile:text-sm flex flex-row justify-between w-full">
         <div>
           <p>
             <span class="hover font-bold">Kimberly Smith</span>
@@ -159,18 +146,18 @@
           <p class="text-Darkgrayishblue">
             1 week ago
           </p>
-          <div class="card bg-Lightgrayishblue p-2 py-4 rounded-md">
+          <div class="card bg-Lightgrayishblue p-5 rounded-md">
             Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
             I'm already having lots of fun and improving my game.
           </div>
         </div>
-        <img class="h-9 w-9" src="assets/images/image-chess.webp" alt="">
+        <img class="h-12 w-12" src="assets/images/image-chess.webp" alt="">
       </div>
     </div>
 
-    <div class="flex gap-4 p-2 py-3 rounded-md">
-      <img class="h-9 w-9" src="assets/images/avatar-nathan-peterson.webp" alt="">
-      <div class="text-xs">
+    <div class="flex gap-4 p-5 rounded-md">
+      <img class="h-12 w-12" src="assets/images/avatar-nathan-peterson.webp" alt="">
+      <div class="text-lg mobile:text-sm">
         <p>
           <span class="hover font-bold">Nathan Peterson</span>
           <span class="text-Darkgrayishblue">reacted to your recent <span class="font-bold">post 5 end-game strategies
@@ -179,16 +166,16 @@
         <p class="text-Darkgrayishblue">
           2 weeks ago
         </p>
-        <div class="card bg-Lightgrayishblue p-2 py-4 rounded-md">
+        <div class="card bg-Lightgrayishblue p-5 rounded-md">
           Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
           I'm already having lots of fun and improving my game.
         </div>
       </div>
     </div>
 
-    <div class="flex gap-4 p-2 py-3 rounded-md">
-      <img class="h-9 w-9" src="assets/images/avatar-anna-kim.webp" alt="">
-      <div class="text-xs">
+    <div class="flex gap-4 p-5 rounded-md">
+      <img class="h-12 w-12" src="assets/images/avatar-anna-kim.webp" alt="">
+      <div class="text-lg mobile:text-sm">
         <p>
           <span class="hover font-bold">Anna Kim</span>
           <span class="text-Darkgrayishblue">left the group <span class="font-bold"> Chess Club</span></span>
@@ -196,17 +183,14 @@
         <p class="text-Darkgrayishblue">
           2 weeks ago
         </p>
-        <div class="card bg-Lightgrayishblue p-2 py-4 rounded-md">
+        <div class="card bg-Lightgrayishblue p-5 rounded-md">
           Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
           I'm already having lots of fun and improving my game.
         </div>
       </div>
     </div>
   </main>
-  <div class="attribution absolute botton-0">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">realxnogga</a>.
-  </div>
   <script src="script.js"></script>
 </body>
+
 </html>
