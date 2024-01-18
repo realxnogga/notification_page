@@ -20,6 +20,6 @@ $(document).ready(function () {
     $('.card').css('display', 'none');
     $('.cardActive').css('display', 'block');
     $('img').click(function(){
-      $(this).siblings('.text-xs').find('.card').slideToggle();
+      $(this).siblings('.text-lg').find('.card').slideToggle();
     })
   });
